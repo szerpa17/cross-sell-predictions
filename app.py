@@ -1,26 +1,14 @@
 # import numpy as np
 
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-
 from flask import Flask, jsonify
- 
+import os
+import sqlite3
 
 # #################################################
 # # Database Setup
 # #################################################
-engine = create_engine("Output/sqlite:///insurance_data.sqlite")
+insurance_info = os.path.join('Database','insurance_data.sqlite')
 
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(engine, reflect=True)
-
-# Save reference to the table
-test_data = Base.classes.test_data
-orig_test_vals = Base.classes.original_test_data_vals
 
 #################################################
 # Flask Setup
@@ -38,25 +26,37 @@ def welcome():
     return (
         f"Available Routes:<br/>"
         f"/api/v1.0/testing_data<br/>"
-        f"/api/v1.0/passengers"
+        # f"/api/v1.0/passengers"
     )
 
 
 @app.route("/api/v1.0/testing_data")
 def names():
+    conn = sqlite3.connect(insurance_info)
+
     # Create our session (link) from Python to the DB
-    session = Session(engine)
+    test_data = conn.execute("SELECT * FROM test_data;")
 
-    """Return a list of all passenger names"""
+    """Return a list"""
     # Query all test_data
-    results = session.query(test_data.name).all()
+    test_data_array = []
 
-    session.close()
+    for row in test_data:
+            test_data_array.append({'id': row[0] , 
+                                    'gender': row[1] ,
+                                    'age': row[2],
+                                    'driving license': row[3],
+                                    'region code': row[4],
+                                    'previously insured': row[5] ,
+                                    'vehicle age': row[6],
+                                    'vehicle damage': row[7],
+                                    'annual premium': row[8],
+                                    'policy sales_channel': row[9],
+                                    'vintage': row[10] })
 
-    # # Convert list of tuples into normal list
-    all_test_data = list(np.ravel(results))
+    conn.close
 
-    return jsonify(all_test_data)
+    return jsonify(test_data_array)
 
 
 # @app.route("/api/v1.0/passengers")
