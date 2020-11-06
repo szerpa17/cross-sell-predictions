@@ -1,6 +1,6 @@
 # import numpy as np
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 import os
 import sqlite3
 
@@ -21,13 +21,15 @@ app = Flask(__name__)
 #################################################
 
 @app.route("/")
-def welcome():
-    """List all available api routes."""
-    return (
-        f"Available Routes:<br/>"
-        f"/api/v1.0/testing_data<br/>"
-        f"/api/v1.0/original_testing_data"
-    )
+def home_page():
+    # """List all available api routes."""
+    # return (
+    #     f"Available Routes:<br/>"
+    #     f"/api/v1.0/testing_data<br/>"
+    #     f"/api/v1.0/original_testing_data"
+    # )
+
+    return render_template("home_page.html")
 
 
 @app.route("/api/v1.0/testing_data")
