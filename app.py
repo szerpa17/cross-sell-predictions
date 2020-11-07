@@ -89,8 +89,10 @@ def original_test_data():
     return jsonify(test_data_array)
 
 @app.route("/api/v1.0/<customer_id>")
-def uer_specific_data(customer_id):
+def user_specific_data(customer_id):
+    # Transform input to int
     c_id = int(customer_id)
+    
     conn = sqlite3.connect(insurance_info)
 
     # Create our session (link) from Python to the DB
