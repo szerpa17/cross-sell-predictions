@@ -124,43 +124,55 @@ def user_specific_data(customer_id):
 @app.route("/api/v1.0/prediction/<customer_id>")
 def customer_prediction(customer_id):
     # Transform input to int
-    c_id = int(customer_id)
+    try:
+        c_id = int(customer_id)
 
-    conn = sqlite3.connect(insurance_info)
+        conn = sqlite3.connect(insurance_info)
 
-    # Create our session (link) from Python to the DB
-    test_data = conn.execute(
-        f"SELECT * FROM test_data WHERE id = {c_id};")
+        # Create our session (link) from Python to the DB
+        test_data = conn.execute(
+            f"SELECT * FROM test_data WHERE id = {c_id};")
 
-    """Return a list"""
-    customer_test_data = []
+        """Return a list"""
+        customer_test_data = []
 
-    for row in test_data:
-        customer_test_data=[row[1],
-                              row[2],
-                              row[3],
-                              row[4],
-                              row[5],
-                              row[6],
-                              row[7],
-                              row[8],
-                              row[9],
-                              row[10]]
+        for row in test_data:
+                customer_test_data = [row[1],
+                                    row[2],
+                                    row[3],
+                                    row[4],
+                                    row[5],
+                                    row[6],
+                                    row[7],
+                                    row[8],
+                                    row[9],
+                                    row[10]]
 
-    conn.close
+        conn.close
 
-    # Load the model from the file
-    knn_from_joblib = joblib.load('recommender_model.pkl')
+        # Load the model from the file
+        knn_from_joblib = joblib.load('recommender_model.pkl')
 
-    x_test = customer_test_data
-    # x_test = customer_test_data.reshape(-1, 1)
+        x_test = customer_test_data
+        # x_test = customer_test_data.reshape(-1, 1)
 
-    # Use the loaded model to make predictions
-    prediction = knn_from_joblib.predict([x_test])
+        # Use the loaded model to make predictions
+        prediction = knn_from_joblib.predict([x_test])
 
-    # return jsonify(prediction)
-    # return jsonify(prediction)
-    return {'prediction': (prediction[0]).tolist()}
+        result = ''
+        if (prediction[0]).tolist() == 0:
+            result = 'Customer not interested'
+        else:
+            result = 'Customer is interested'
+
+        # return jsonify(prediction)
+        # return jsonify(prediction)
+        return {'customer ID': c_id,
+                'prediction': result}
+
+    except ValueError:
+        return {'ID Value Error': 'ID not found in test data',
+                'Next Steps': 'Please enter an ID value that ranges from 381110 to 508146'}
 
 
 if __name__ == '__main__':
