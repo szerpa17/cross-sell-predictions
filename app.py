@@ -151,7 +151,7 @@ def customer_prediction(customer_id):
         conn.close
 
         # Load the model from the file
-        knn_from_joblib = joblib.load('recommender_model.pkl')
+        knn_from_joblib = joblib.load('Model/recommender_model.pkl')
 
         x_test = customer_test_data
         # x_test = customer_test_data.reshape(-1, 1)
@@ -203,7 +203,7 @@ def user_prediction(val_1, val_2, val_3, val_4, val_5, val_6, val_7, val_8, val_
                     vintage]
 
         # Load the model from the file
-        knn_from_joblib = joblib.load('recommender_model.pkl')
+        knn_from_joblib = joblib.load('Model/recommender_model.pkl')
 
         x_test = user_test_data
 
