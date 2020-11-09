@@ -32,7 +32,7 @@ def home_page():
 
     return render_template("home/layout.html")
 
-
+# Route returns all cleaned test data
 @app.route("/api/v1.0/testing_data")
 def testing_data():
     conn = sqlite3.connect(insurance_info)
@@ -60,7 +60,7 @@ def testing_data():
 
     return jsonify(test_data_array)
 
-
+# Route returns all pre-cleaned test data
 @app.route("/api/v1.0/original_testing_data")
 def original_test_data():
     conn = sqlite3.connect(insurance_info)
@@ -88,7 +88,7 @@ def original_test_data():
 
     return jsonify(test_data_array)
 
-
+# Route returns test data for a specific customer ID
 @app.route("/api/v1.0/<customer_id>")
 def user_specific_data(customer_id):
     # Transform input to int
@@ -120,7 +120,7 @@ def user_specific_data(customer_id):
 
     return jsonify(customer_data)
 
-
+# Route returns prediction for a specific customer ID
 @app.route("/api/v1.0/prediction/<customer_id>")
 def customer_prediction(customer_id):
     # Transform input to int
@@ -165,8 +165,6 @@ def customer_prediction(customer_id):
         else:
             result = 'Customer is interested'
 
-        # return jsonify(prediction)
-        # return jsonify(prediction)
         return {'customer ID': c_id,
                 'prediction': result}
 
@@ -174,6 +172,7 @@ def customer_prediction(customer_id):
         return {'ID Value Error': 'ID not found in test data',
                 'Next Steps': 'Please enter an ID value that ranges from 381110 to 508146'}
 
+# Route returns prediction for user inputted values
 @app.route("/api/v1.0/user_prediction/<val_1>-<val_2>-<val_3>-<val_4>-<val_5>-<val_6>-<val_7>-<val_8>-<val_9>-<val_10>")
 def user_prediction(val_1, val_2, val_3, val_4, val_5, val_6, val_7, val_8, val_9, val_10):
     # Transform input to int
@@ -221,7 +220,7 @@ def user_prediction(val_1, val_2, val_3, val_4, val_5, val_6, val_7, val_8, val_
 
     except ValueError:
         return {'Data type entry error': 'Values entered were not recognized',
-                'Accepted values': { 'gender' : 'Male: 0, Female: 1',
+                'Accepted values': {'gender' : 'Male: 0, Female: 1',
                                     'age' : "Number value representing the customer's age",
                                     'drivers license' : 'Customer does not have DL: 0, Customer already has DL: 1',
                                     'region code' : "Number value representing the customer's region" ,
