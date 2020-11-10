@@ -4,7 +4,7 @@ from flask import Flask, jsonify, render_template
 import os
 import sqlite3
 import joblib
-# from config import cxnstring
+from config import cxnstring
 
 # #################################################
 # # Database Setup
@@ -17,7 +17,7 @@ import joblib
 #################################################
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','') or 'sqlite:///db.insurance_data'
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','') or 'sqlite:///db.insurance_data'
 
 #################################################
 # Flask Routes
@@ -37,8 +37,8 @@ def home_page():
 # Route returns all cleaned test data
 @app.route("/api/v1.0/testing_data")
 def testing_data():
-    conn = sqlite3.connect(app)
-    # conn = sqlite3.connect(cxnstring)
+    # conn = sqlite3.connect(app)
+    conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
     test_data = conn.execute("SELECT * FROM test_data;")
