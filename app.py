@@ -37,7 +37,8 @@ def home_page():
 # Route returns all cleaned test data
 @app.route("/api/v1.0/testing_data")
 def testing_data():
-    conn = sqlite3.connect(cxnstring)
+    conn = sqlite3.connect(app)
+    # conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
     test_data = conn.execute("SELECT * FROM test_data;")
