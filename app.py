@@ -4,11 +4,12 @@ from flask import Flask, jsonify, render_template
 import os
 import sqlite3
 import joblib
+from config import cxnstring
 
 # #################################################
 # # Database Setup
 # #################################################
-insurance_info = os.path.join('Database', 'insurance_data.sqlite')
+# insurance_info = os.path.join('Database', 'insurance_data.sqlite')
 
 
 #################################################
@@ -35,7 +36,7 @@ def home_page():
 # Route returns all cleaned test data
 @app.route("/api/v1.0/testing_data")
 def testing_data():
-    conn = sqlite3.connect(insurance_info)
+    conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
     test_data = conn.execute("SELECT * FROM test_data;")
@@ -63,7 +64,7 @@ def testing_data():
 # Route returns all pre-cleaned test data
 @app.route("/api/v1.0/original_testing_data")
 def original_test_data():
-    conn = sqlite3.connect(insurance_info)
+    conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
     test_data = conn.execute("SELECT * FROM original_test_data_vals;")
@@ -94,7 +95,7 @@ def user_specific_data(customer_id):
     # Transform input to int
     c_id = int(customer_id)
 
-    conn = sqlite3.connect(insurance_info)
+    conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
     test_data = conn.execute(
@@ -127,7 +128,7 @@ def customer_prediction(customer_id):
     try:
         c_id = int(customer_id)
 
-        conn = sqlite3.connect(insurance_info)
+        conn = sqlite3.connect(cxnstring)
 
         # Create our session (link) from Python to the DB
         test_data = conn.execute(
