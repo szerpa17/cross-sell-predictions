@@ -4,7 +4,7 @@ from flask import Flask, jsonify, render_template
 import os
 import sqlite3
 import joblib
-from config import cxnstring
+# from config import cxnstring
 
 # #################################################
 # # Database Setup
@@ -17,7 +17,7 @@ from config import cxnstring
 #################################################
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','') or 'sqlite:///db.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','') or 'sqlite:///db.insurance_data'
 
 #################################################
 # Flask Routes
