@@ -1,20 +1,24 @@
 // Initialize the page with a default plot
 function init() {
 
-    d3.json("/api/v1.0/original_testing_data").then((data) => {
-        console.log(data);
+    d3.json("/api/v1.0/testing_data").then((data) => {
+
+        var id_list = data.map(function(customer) {
+            return customer.id
+        })
         
-        // Populate dropdown menu with ids
+        console.log(id_list)
+        // })
+        // let id_values = data.map(callback(currentValue[, index[, array]]) {
+        //     console.log(currentValue);
+        // //     // return element for newArray, after executing something
+        //   });
 
-        let id_values = data.map(callback(currentValue[, index[, array]]) {
-            // return element for newArray, after executing something
-          }[, thisArg]);
 
-
-        let dropdownMenu = d3.select("select");
-        data.id.forEach(ids => {
-            dropdownMenu.append("option").text(ids);
-            });
+        // let dropdownMenu = d3.select("select");
+        // data.id.forEach(ids => {
+        //     dropdownMenu.append("option").text(ids);
+        //     });
     
     });
 }
