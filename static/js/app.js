@@ -1,19 +1,26 @@
 // Initialize the page with a default plot
 function init() {
+    
+    d3.json("/api/v1.0/testing_data").then((data) => {
 
-    d3.json("/api/v1.0/original_testing_data").then((data) => {
-        console.log(data);
+        // Iterate through data
+        var idList = data.map(function(customer) {
+            // Collect all customer ID values to populate the drop down
+            return customer.id;
+        })
         
-        // Populate dropdown menu with ids
+        // Slice out 50 ID values for site efficiency
+        idList20Vals = idList.slice(0,50);
 
-        let id_values = data.map(callback(currentValue[, index[, array]]) {
-            // return element for newArray, after executing something
-          }[, thisArg]);
+        // Use D3 to select the location of the drop down values
+        let dropdownMenu = d3.select("#customer_ID");
 
-
-        let dropdownMenu = d3.select("select");
-        data.id.forEach(ids => {
-            dropdownMenu.append("option").text(ids);
+        // Populate the drop down customer ID values
+        idList20Vals.forEach(id => {
+            dropdownMenu
+                .append("option")
+                .text(id)
+                .property("value", id);;
             });
     
     });
