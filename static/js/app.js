@@ -9,11 +9,13 @@ function init() {
             return customer.id;
         })
         
-        // console.log(id_list)
+        // Slice out 50 ID values for site efficiency
         idList20Vals = id_list.slice(0,50);
-        console.log(idList20Vals);
 
+        // Use D3 to select the location of the drop down values
         let dropdownMenu = d3.select("#customer_ID");
+
+        // Populate the drop down customer ID values
         idList20Vals.forEach(id => {
             dropdownMenu
                 .append("option")
