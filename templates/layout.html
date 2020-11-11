@@ -18,7 +18,6 @@
 
 <body>
     <!-- Header -->
-
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
@@ -30,43 +29,26 @@
     <div class="jumbotron vertical-center">
         <!-- Dropdown Options and Details -->
         <div class="container">
-            <div class="well">
-                <h5>Customer ID:</h5>
-                <select id="customer_ID" onchange="optionChanged(this.value)"></select>
+            {% block hp_dropdown %} 
+            {% include "modules/hp_dropdown.html" %} 
+            {% endblock hp_dropdown %}
 
-            </div>
         </div>
-
 
         <!-- Customer Details Panel -->
         <div class="container">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h5 class="panel-title">Customer Details</h5>
-                </div>
+            {% block customer_details %} 
+            {% include "modules/customer_details.html" %} 
+            {% endblock customer_details %}
 
-                <div id="customer_details" class="panel-body">
+        </div>
 
-                    <p>Testing</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Incidunt optio provident tempora amet, eveniet et, eum illum, culpa laborum dicta recusandae
-                        magni architecto.
-                        Illo saepe facilis, unde. Debitis, atque, doloremque?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Incidunt optio provident tempora amet, eveniet et, eum illum, culpa laborum dicta recusandae
-                        magni architecto.
-                        Illo saepe facilis, unde. Debitis, atque, doloremque?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Incidunt optio provident tempora amet, eveniet et, eum illum, culpa laborum dicta recusandae
-                        magni architecto.
-                        Illo saepe facilis, unde. Debitis, atque, doloremque?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Incidunt optio provident tempora amet, eveniet et, eum illum, culpa laborum dicta recusandae
-                        magni architecto.
-                        Illo saepe facilis, unde. Debitis, atque, doloremque?</p>
-                </div>
 
-            </div>
+        <div class="container">
+            {% block customer_ %} 
+            {% include "modules/customer_details.html" %} 
+            {% endblock customer_details %}
+
         </div>
 
     </div>

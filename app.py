@@ -32,7 +32,7 @@ def home_page():
     #     f"/api/v1.0/original_testing_data"
     # )
 
-    return render_template("home/layout.html")
+    return render_template("layout.html")
 
 # Route returns all cleaned test data
 @app.route("/api/v1.0/testing_data")
