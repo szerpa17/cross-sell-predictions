@@ -8,12 +8,6 @@ function init() {
         })
         
         console.log(id_list)
-        // })
-        // let id_values = data.map(callback(currentValue[, index[, array]]) {
-        //     console.log(currentValue);
-        // //     // return element for newArray, after executing something
-        //   });
-
 
         // let dropdownMenu = d3.select("select");
         // data.id.forEach(ids => {
