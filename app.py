@@ -4,6 +4,7 @@ from flask import Flask, jsonify, render_template
 import os
 import sqlite3
 import joblib
+from sklearn.neighbors import KNeighborsClassifier
 from config import cxnstring
 
 # #################################################
