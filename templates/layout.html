@@ -12,7 +12,7 @@
     <!-- Home Page Style Sheet -->
     <link rel="stylesheet" href="static/css/style.css" />
 
-    <title>Cross-Selling Machine Learning Demo</title>
+    <title>Predicting Cross-Sale Opportunities</title>
 
 </head>
 
@@ -26,33 +26,42 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <h1>Predicting Potential Cross Sales Demo</h1>
+                <h1>Predicting Cross-Sale Opportunities</h1>
             </div>
         </div>
     </div>
 
     <div class="jumbotron vertical-center">
-        <!-- Dropdown Options and Details -->
+        
         <div class="container">
-            {% block hp_dropdown %} 
-            {% include "modules/hp_dropdown.html" %} 
-            {% endblock hp_dropdown %}
+            <div class="row">
+                <!-- Dropdown Options and Details -->
+                <div class="col-4">
+                    {% block hp_dropdown %} 
+                    {% include "modules/hp_dropdown.html" %} 
+                    {% endblock hp_dropdown %}
+                </div>
+
+                <!-- Customer Prediction Result -->
+                <div class="col-8">
+                    {% block customer_results %} 
+                    {% include "modules/customer_results.html" %} 
+                    {% endblock customer_results %}
+                </div>
+
+            </div>
 
         </div>
 
         <!-- Customer Details Panel -->
         <div class="container">
-            {% block customer_details %} 
-            {% include "modules/customer_details.html" %} 
-            {% endblock customer_details %}
-
-        </div>
-
-        <!-- Customer Prediction Result -->
-        <div class="container">
-            {% block customer_results %} 
-            {% include "modules/customer_results.html" %} 
-            {% endblock customer_results %}
+            <div class="row">
+                <div class="col-12">
+                    {% block customer_details %} 
+                    {% include "modules/customer_details.html" %} 
+                    {% endblock customer_details %}
+                </div>
+            </div>
 
         </div>
 
