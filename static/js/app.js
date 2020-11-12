@@ -12,7 +12,7 @@ function init() {
         // Slice out 50 ID values for site efficiency
         idList20Vals = idList.slice(0,50);
 
-        // Use D3 to select the location of the drop down values
+        // Use D3 to select the location of the drops down values
         let dropdownMenu = d3.select("#customer_ID");
 
         // Populate the drop down customer ID values
@@ -23,9 +23,20 @@ function init() {
                 .property("value", id);;
             });
     
+        // Populate initial prediction
+        populateInfo(idList20Vals[0])
+        predict(idList20Vals[0])
     });
 }
 
+function optionChanged() {
+    
+    let selectedID = d3.select("#customer_ID").node().value;
+    console.log(selectedID);
+    
+    populateInfo(selectedID);
+    predict(selectedID);
+ }
 
 // Load init()
 init();
