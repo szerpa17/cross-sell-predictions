@@ -13,7 +13,7 @@ function predict(selectedID) {
         imgBox.html("");
 
         // Conditional to populate image
-        if (result[0] = "Customer not interested") {
+        if (result[0] = "Customer is not interested in purchasing car insurance.") {
 
             // Append customer details items to the box
             box.append("p")
