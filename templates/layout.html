@@ -56,11 +56,17 @@
         <!-- Customer Details Panel -->
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-4">
                     {% block customer_details %} 
                     {% include "modules/customer_details.html" %} 
                     {% endblock customer_details %}
                 </div>
+                
+                <!-- Prediction Image Location -->
+                <div id="rImage" class="col-8">
+
+                </div>
+
             </div>
 
         </div>

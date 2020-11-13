@@ -15,15 +15,14 @@ function predict(selectedID) {
         box.html("");
 
         // Conditional to populate image
-        if (result = "Customer not interested") {
+        if (result[0] = "Customer not interested") {
             // Append customer details items to the box
             box.append("p")
                 .text(`${result[0]}`)
-            // console.log(;`${result[0]}`);
             box.append("div")
-                .html('<img src="https://github.com/szerpa17/cross-sell-predictions/blob/main/images/prediction1.PNG?raw=true" alt="">')
+                .html('<img src="https://github.com/szerpa17/cross-sell-predictions/blob/main/images/prediction1.PNG?raw=true" alt="">');
                 // .attr('class', "border-radius: 20px")
-                .style("border-radius", "8px");
+                // .style("border-radius", "8px");
         }
         else {
             box.append("p")
@@ -32,7 +31,7 @@ function predict(selectedID) {
             box.append("div")
                 .html('<img src="https://github.com/szerpa17/cross-sell-predictions/blob/main/images/prediction2.PNG?raw=true" alt="">')
                 // .attr('class', "border-radius: 20px")
-                .style("border-radius", "8px");
+                // .style("border-radius", "8px");
         }
 
 
