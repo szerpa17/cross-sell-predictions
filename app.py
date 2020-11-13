@@ -165,9 +165,9 @@ def customer_prediction(customer_id):
 
         result = ''
         if (prediction[0]).tolist() == 0:
-            result = 'Customer not interested'
+            result = 'Customer is not interested in purchasing car insurance.'
         else:
-            result = 'Customer is interested'
+            result = 'Customer is interested in purchasing car insurance.'
 
         return {'customer ID': c_id,
                 'prediction': result}
