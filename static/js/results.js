@@ -9,39 +9,19 @@ function predict(selectedID) {
         console.log(result[0])
 
         // Populate demographic info box
-        let box = d3.select("#customer_results");
+        let box = d3.selectAll("#customer_results");
 
         // Clear box content
         box.html("");
 
         // Append customer details items to the box
         box.append("p")
-            .text(`${result[0]}`);
-            console.log(`${result[0]}`);
-        
-
-
-        // let result = 
-        // console.log(data.map(d => d.prediction));
-        // // Iterate through data
-        // var idList = data.map(function(customer) {
-        //     // Collect all customer ID values to populate the drop down
-        //     return customer.id;
-        // })
-        
-        // // Slice out 50 ID values for site efficiency
-        // idList20Vals = idList.slice(0,50);
-
-        // // Use D3 to select the location of the drop down values
-        // let dropdownMenu = d3.select("#customer_ID");
-
-        // // Populate the drop down customer ID values
-        // idList20Vals.forEach(id => {
-        //     dropdownMenu
-        //         .append("option")
-        //         .text(id)
-        //         .property("value", id);;
-        //     });
+            .text(`${result[0]}`)
+            // console.log(;`${result[0]}`);
+        box.append("div")
+            .html('<img src="https://github.com/szerpa17/cross-sell-predictions/blob/main/images/prediction1.PNG?raw=true" alt="">')
+            // .attr('class', "border-radius: 20px")
+            .style("border-radius", "8px");
     
     });
 }
