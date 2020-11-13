@@ -3,10 +3,6 @@ function populateInfo(selectedID) {
 
     d3.json("/api/v1.0/" + selectedID).then((data) => {
         let singleCustomer = data;
-        console.log(singleCustomer);
-
-        // // Console log grabbed values for checking
-        // console.log(custdets);
 
         // Populate demographic info box
         let box = d3.select("#customer_details");
@@ -21,11 +17,5 @@ function populateInfo(selectedID) {
             console.log(`${key}: ${value}`);
         };
 
-
-        // Object.entries(singleCustomer).forEach(function(key, value) {
-        //     box.append("p")
-        //         .text(`${key}: ${value}`);
-        //         console.log(`${key}: ${value}`);
-        // });
     });
 }
