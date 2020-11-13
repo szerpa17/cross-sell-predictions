@@ -1,7 +1,16 @@
 h1 {
     letter-spacing: 2px;
+    background-color:silver;
+    width:100%;
+    padding:50px;
+    text-align: center;
+    
 }
 
 h5 {
     letter-spacing: 2px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
 }

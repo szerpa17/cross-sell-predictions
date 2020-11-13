@@ -18,34 +18,28 @@
 
 <body>
     <!-- Navbar -->
-    {% block navbar %} 
-    {% include "modules/navbar.html" %} 
+    {% block navbar %}
+    {% include "modules/navbar.html" %}
     {% endblock navbar %}
-    
+
     <!-- Header -->
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-12">
-                <h1>Predicting Cross-Sale Opportunities</h1>
-            </div>
-        </div>
-    </div>
+    <h1>Predicting Cross-Sale Opportunities</h1>
 
     <div class="jumbotron vertical-center">
-        
+
         <div class="container">
             <div class="row">
                 <!-- Dropdown Options and Details -->
                 <div class="col-4">
-                    {% block hp_dropdown %} 
-                    {% include "modules/hp_dropdown.html" %} 
+                    {% block hp_dropdown %}
+                    {% include "modules/hp_dropdown.html" %}
                     {% endblock hp_dropdown %}
                 </div>
 
                 <!-- Customer Prediction Result -->
                 <div class="col-8">
-                    {% block customer_results %} 
-                    {% include "modules/customer_results.html" %} 
+                    {% block customer_results %}
+                    {% include "modules/customer_results.html" %}
                     {% endblock customer_results %}
                 </div>
 
@@ -57,8 +51,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    {% block customer_details %} 
-                    {% include "modules/customer_details.html" %} 
+                    {% block customer_details %}
+                    {% include "modules/customer_details.html" %}
                     {% endblock customer_details %}
                 </div>
 
@@ -71,19 +65,20 @@
 
         </div>
 
-        
+
     </div>
 
     <!-- Project Links -->
     <div class="container">
         <div class="row">
             <div class="col-12">
-                {% block project_links %} 
-                {% include "modules/project_links.html" %} 
+                {% block project_links %}
+                {% include "modules/project_links.html" %}
                 {% endblock project_links %}
             </div>
         </div>
     </div>
+
 
 
 
