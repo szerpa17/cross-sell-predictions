@@ -12,21 +12,18 @@ function predict(selectedID) {
         box.html("");
         imgBox.html("");
 
-        // Conditional to populate result text and image
-        if (result[0] = "Customer is not interested in purchasing car insurance.") {
+        // Append customer details items to the box
+        box.append("p")
+        .text(`${result[0]}`)
 
-            // Append customer details items to the box
-            box.append("p")
-                .text(`${result[0]}`)
+        // Conditional to populate result image
+        if (result[0] = "Customer is not interested in purchasing car insurance.") {
             imgBox.append("div")
                 .html('<img src="https://github.com/szerpa17/cross-sell-predictions/blob/main/images/prediction1.PNG?raw=true" alt="">');
 
         }
 
         else {
-            box.append("p")
-                .text(`${result[0]}`)
-            // console.log(;`${result[0]}`);
             imgBox.append("div")
                 .html('<img src="https://github.com/szerpa17/cross-sell-predictions/blob/main/images/prediction2.PNG?raw=true" alt="">')
 
