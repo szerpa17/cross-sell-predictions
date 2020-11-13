@@ -117,7 +117,7 @@ def user_specific_data(customer_id):
                               'vehicle age': row[6],
                               'vehicle damage': row[7],
                               'annual premium': row[8],
-                              'policy sales_channel': row[9],
+                              'policy sales channel': row[9],
                               'vintage': row[10]})
 
     conn.close
