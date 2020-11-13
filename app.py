@@ -117,7 +117,7 @@ def user_specific_data(customer_id):
                               'vehicle age': row[6],
                               'vehicle damage': row[7],
                               'annual premium': row[8],
-                              'policy sales_channel': row[9],
+                              'policy sales channel': row[9],
                               'vintage': row[10]})
 
     conn.close
@@ -165,9 +165,9 @@ def customer_prediction(customer_id):
 
         result = ''
         if (prediction[0]).tolist() == 0:
-            result = 'Customer not interested'
+            result = 'Customer is not interested in purchasing car insurance.'
         else:
-            result = 'Customer is interested'
+            result = 'Customer is interested in purchasing car insurance.'
 
         return {'customer ID': c_id,
                 'prediction': result}
