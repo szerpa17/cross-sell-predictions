@@ -1,13 +1,12 @@
 # Predicting Potential Cross-Sale Opportunities with Machine Learning
 Predicting if health insurance customers will be interested in purchasing an insurer's new car insurance product using Machine Learning.
 
-![](images/coins_resized.jpg)
+![Project Image](images/coins_resized.jpg)
 
 ## Project Links
 * [Model Building Notebook](ml_model_build.ipynb)
-* [Vizualization Notebook](eda_viz.ipynb)
+* [Visualization Notebook](eda_viz.ipynb)
 * [Heroku App](https://cross-sale-predictions.herokuapp.com/)
-
 
 
 ## Data Source:
@@ -15,7 +14,7 @@ Predicting if health insurance customers will be interested in purchasing an ins
     * The Kaggle train.csv file was used to build and train our model, and is saved in our Resources folder as [customer_data.csv](resources/customer_data.csv).
     * The Kaggle test.csv data was used to externally test our model, and may be found [here](resources/test.csv).
     
-The data used to build our selected Machine Learning model contains contains 11 customer attributes found below.
+The data used to build our selected Machine Learning model contains 11 customer attributes found below.
 ![Variables and their Definitions](images/variable_definitions.PNG)
 
 
@@ -36,14 +35,15 @@ The data used to build our selected Machine Learning model contains contains 11 
 * HTML
 * Bootstrap
 * CSS
-* Javascript
+* JavaScript
 
 ### Deployment
 * Heroku
 
+
 ## Data Exploration
 It is a large dataset with over 380,000 records, and only 12% of customers conveying interest in purchasing car insurance. Customer responses and specific attributes were compared.
-To view all visualizations created, please refer to the [Vizualization Notebook](eda_viz.ipynb).
+To view all visualizations created, please refer to the [Visualization Notebook](eda_viz.ipynb).
 
 ![Customer Response](images/response_bar.png)
 ![Response by Gender](images/gender_bar.png)
@@ -54,9 +54,11 @@ To view all visualizations created, please refer to the [Vizualization Notebook]
 Correlation analysis was also conducted, which allowed for the identification of the age and vehicle age relationship.
 ![Correlation Matrix](images/corr_matrix.png)
 
+
 ## Model Selection
-This task was identified as a classification problem due to the mutltiple customer attribute combinations.
+This task was identified as a classification problem due to the presence of multiple customer attribute combinations.
 By using K-Nearest Neighbors (KNN), data points can be classified based on their proximity and association to other available data.
+
 
 ## Building the Model
 ### Data Preprocessing
@@ -82,6 +84,7 @@ When the data was run against the external [testing dataset](resources/test.csv)
 
 These outcomes may be found on our published [app](https://cross-sale-predictions.herokuapp.com/).
 
+
 ## Flask App Routes
 * "/" - Home Page
 * "/api/v1.0/testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.
@@ -90,15 +93,17 @@ These outcomes may be found on our published [app](https://cross-sale-prediction
 * "/api/v1.0/prediction/< customer_id >" - Returns a purchase prediction for a specific customer ID.
 * "/api/v1.0/user_prediction/< multi value entry >" - Returns a prediction for inputted customer data.
 
-## Flask App Infastructure
+
+## Flask App Infrastructure
 ![Flask App Infrastructure](images/infrastructure.PNG)
+
 
 ## Next Steps
 * Apply oversampling onto the dataset to increase the number of interested customers in order to address the issue of few positive responses in original dataset.
 * Experiment with model results to achieve a 90-95% accuracy level. 
 * Experiment with using less customer attributes to identify interested and non-interested customers.
 * Apply a different method to load large datasets into web apps.
-* Make available a form entry method for users to select and submi different attributes to predict cross sale potential. 
+* Make available a form entry method for users to select and submit different attributes to predict cross sale potential. 
 
 ----
 
