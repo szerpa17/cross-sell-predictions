@@ -29,11 +29,21 @@
 
         <div class="container">
             <div class="row">
-                <!-- Dropdown Options and Details -->
+                <!-- Dropdown Options -->
                 <div class="col-4">
                     {% block hp_dropdown %}
                     {% include "modules/hp_dropdown.html" %}
                     {% endblock hp_dropdown %}
+
+                    <!-- Customer Details Panel -->
+                    <div class="container">
+
+                        {% block customer_details %}
+                        {% include "modules/customer_details.html" %}
+                        {% endblock customer_details %}
+                    </div>
+
+
                 </div>
 
                 <!-- Customer Prediction Result -->
@@ -41,30 +51,16 @@
                     {% block customer_results %}
                     {% include "modules/customer_results.html" %}
                     {% endblock customer_results %}
-                </div>
 
-            </div>
-
-        </div>
-
-        <!-- Customer Details Panel -->
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    {% block customer_details %}
-                    {% include "modules/customer_details.html" %}
-                    {% endblock customer_details %}
-                </div>
-
-                <!-- Prediction Image Location -->
-                <div id="rImage" class="col-8">
+                    <!-- Prediction Image Location -->
+                    <div id="rImage" class="col-8">
+                    </div>
 
                 </div>
 
             </div>
 
         </div>
-
 
     </div>
 
