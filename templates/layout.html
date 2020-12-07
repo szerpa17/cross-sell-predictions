@@ -29,12 +29,23 @@
 
         <div class="container">
             <div class="row">
+                <!-- Project Details -->
+                <div class="col-12">
+                    {% block project_details %}
+                    {% include "modules/project_details.html" %}
+                    {% endblock project_details %}
+                </div>
+            </div>
+
+            <div class="row">
                 <!-- Dropdown Options -->
                 <div class="col-4">
                     {% block hp_dropdown %}
                     {% include "modules/hp_dropdown.html" %}
                     {% endblock hp_dropdown %}
 
+                </br>
+                
                     <!-- Customer Details Panel -->
                     <div class="container">
 
