@@ -25,17 +25,24 @@
     <!-- Header -->
     <h1>Predicting Cross-Sale Opportunities</h1>
 
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Project Details -->
+            <div class="col-12">
+                {% block project_details %}
+                {% include "modules/project_details.html" %}
+                {% endblock project_details %}
+            </div>
+
+        </div>
+        
+    </div>
+
     <div class="jumbotron vertical-center">
 
         <div class="container">
-            <div class="row">
-                <!-- Project Details -->
-                <div class="col-12">
-                    {% block project_details %}
-                    {% include "modules/project_details.html" %}
-                    {% endblock project_details %}
-                </div>
-            </div>
 
             <div class="row">
                 <!-- Dropdown Options -->
