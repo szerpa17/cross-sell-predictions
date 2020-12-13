@@ -9,29 +9,24 @@
 
 <div id="projectDetails">
 
-
-
-<br/>
-<p>
-<h2>Project Links</h2>
-
-</p>
-
 <br/>
 <p>
 </p><h2>Data Source:</h2>
+<hr noshade>
 Kaggle <a href="https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction?select=train.csv">Health Insurance Cross Sell Prediction Data Set</a>.
 </p>
-    
+
+<!-- <hr> -->
+
 <p>
 The data used to build our selected Machine Learning model contains 11 customer attributes found below.
 <img src="static/images/variable_definitions.PNG" alt="Variables and their Definitions" class="center">
 </p>
 
 <br/>
-
 <p>
 <h2>Tools</h2>
+<hr noshade>
 <h3>Back-end</h3>
 <ul>
 <li>Python</li> 
@@ -65,6 +60,7 @@ The data used to build our selected Machine Learning model contains 11 customer 
 <br/>
 <p>
 <h2>Data Exploration</h2>
+<hr noshade>
 It is a large dataset with over 380,000 records, and only 12% of customers conveying interest in purchasing car insurance. Customer responses and specific attributes were compared.
 To view all visualizations created, please refer to the [Visualization Notebook](eda_viz.ipynb).
 </p>
@@ -87,6 +83,7 @@ Correlation analysis was also conducted, which allowed for the identification of
 <br/>
 <p>
 <h2>Model Selection</h2>
+<hr noshade>
 This task was identified as a classification problem due to the presence of multiple customer attribute combinations.
 By using K-Nearest Neighbors (KNN), data points can be classified based on their proximity and association to other available data.
 </p>
@@ -94,9 +91,11 @@ By using K-Nearest Neighbors (KNN), data points can be classified based on their
 <br/>
 <p>
 <h2>Building the Model</h2>
+<hr noshade>
 </p>
 <p>
 <h3>Data Preprocessing</h3>
+<hr>
 Categorical data was converted into numeric values in order for the information to be applied to our model.
 The ID column that was initially provided with the dataset was also excluded from our model as it did not add value to the generation of predictions.
 
@@ -106,6 +105,7 @@ The ID column that was initially provided with the dataset was also excluded fro
 <br/>
 <p>
 <h3>Model Training</h3>
+<hr>
 Using Sklearn's train-test split function, training and testing data was extracted from the [customer_data.csv](resources/customer_data.csv) in order to train the KNN model and evaluate its accuracy.
 Before training the model, a series of k-values were populated and plotted in order to identify the point of convergence/stability which allowed the selection of k-value 17 (as this k-value captured some uncertainty prior to the identified point of convergence). 
 
@@ -117,6 +117,7 @@ Before training the model, a series of k-values were populated and plotted in or
 <br/>
 <p>
 <h3>Model Evaluation</h3>
+<hr>
 Out of the 95278 records in the test data supplied from the train-test split, the KNN model correctly predicted 83425 customer outcomes and reached an accuracy level of 0.876.
 The model returned 28 correct positive responses. 
 </p>
@@ -124,6 +125,7 @@ The model returned 28 correct positive responses.
 <br/>
 <p>
 <h2>Model Results</h2>
+<hr noshade>
 When the data was run against the external [testing dataset](resources/test.csv), no customers were identified as interested in purchasing car insurance. This is likely due to the machine only being supplied a small percentage of interested individuals, which reduced its output.
 
 These outcomes may be found on our published [app](https://cross-sale-predictions.herokuapp.com/).
@@ -133,6 +135,7 @@ These outcomes may be found on our published [app](https://cross-sale-prediction
 
 <p>
 <h2>Flask App Routes</h2>
+<hr noshade>
 <ul>
 <li>"/" - Home Page</li>
 <li>"/api/v1.0/testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.</li> 
@@ -147,12 +150,14 @@ These outcomes may be found on our published [app](https://cross-sale-prediction
 <br/>
 <p>
 <h2>Flask App Infrastructure</h2>
+<hr noshade>
 ![Flask App Infrastructure](images/infrastructure.PNG)
 </p>
 
 <br/>
 <p>
 <h2>Next Steps</h2>
+<hr noshade>
  Apply oversampling onto the dataset to increase the number of interested customers in order to address the issue of few positive responses in original dataset.
  Experiment with model results to achieve a 90-95% accuracy level. 
  Experiment with using less customer attributes to identify interested and non-interested customers.
@@ -161,7 +166,5 @@ These outcomes may be found on our published [app](https://cross-sale-prediction
 </p>
 
 </div>
-
-<hr/>
 
 {% endblock project_details %}
