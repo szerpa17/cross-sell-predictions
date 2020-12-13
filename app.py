@@ -56,7 +56,7 @@ def testing_data():
 
     return jsonify(test_data_array)
 
-# Route returns all pre-cleaned test data
+# Route returns all original test data
 @app.route("/api/v1.0/original_testing_data")
 def original_test_data():
     conn = sqlite3.connect(cxnstring)
