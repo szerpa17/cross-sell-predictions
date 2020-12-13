@@ -34,7 +34,7 @@ def testing_data():
     conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
-    test_data = conn.execute("SELECT * FROM test_data;")
+    test_data = conn.execute("SELECT * FROM model_test_data;")
 
     """Return a list"""
     test_data_array = []
@@ -62,7 +62,7 @@ def original_test_data():
     conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
-    test_data = conn.execute("SELECT * FROM original_test_data_vals;")
+    test_data = conn.execute("SELECT * FROM original_test_data;")
 
     """Return a list"""
     test_data_array = []
@@ -94,7 +94,7 @@ def user_specific_data(customer_id):
 
     # Create our session (link) from Python to the DB
     test_data = conn.execute(
-        f"SELECT * FROM original_test_data_vals WHERE id = {c_id};")
+        f"SELECT * FROM original_test_data WHERE id = {c_id};")
 
     """Return a list"""
     customer_data = []
@@ -127,7 +127,7 @@ def customer_prediction(customer_id):
 
         # Create our session (link) from Python to the DB
         test_data = conn.execute(
-            f"SELECT * FROM test_data WHERE id = {c_id};")
+            f"SELECT * FROM original_test_data WHERE id = {c_id};")
 
         """Return a list"""
         customer_test_data = []
