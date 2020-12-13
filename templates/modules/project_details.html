@@ -16,6 +16,7 @@
 <a href="https://github.com/szerpa17/cross-sell-predictions/blob/main/eda_viz.ipynb">Visualization Notebook</a>
 </p>
 
+<br/>
 <p>
 </p><h2>Data Source:</h2>
 Kaggle <a href="https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction?select=train.csv">Health Insurance Cross Sell Prediction Data Set</a>.
@@ -69,6 +70,7 @@ To view all visualizations created, please refer to the [Visualization Notebook]
 
 <p>
 <br/>
+static/images/variable_definitions.PNG
 ![Customer Response](images/response_bar.png)
 ![Response by Gender](images/gender_bar.png)
 ![Response by Age](images/age_stackedbar.png)
@@ -91,13 +93,17 @@ By using K-Nearest Neighbors (KNN), data points can be classified based on their
 <br/>
 <p>
 <h2>Building the Model</h2>
+</p>
+<p>
 <h3>Data Preprocessing</h3>
 Categorical data was converted into numeric values in order for the information to be applied to our model.
 The ID column that was initially provided with the dataset was also excluded from our model as it did not add value to the generation of predictions.
 
 ![Data Preprocessing](images/preprocess.PNG)
+</p>
 
 <br/>
+<p>
 <h3>Model Training</h3>
 Using Sklearn's train-test split function, training and testing data was extracted from the [customer_data.csv](resources/customer_data.csv) in order to train the KNN model and evaluate its accuracy.
 Before training the model, a series of k-values were populated and plotted in order to identify the point of convergence/stability which allowed the selection of k-value 17 (as this k-value captured some uncertainty prior to the identified point of convergence). 
@@ -105,8 +111,10 @@ Before training the model, a series of k-values were populated and plotted in or
 ![Train Test Split Code](images/train_test_split.PNG)
 
 ![Convergence Point](images/convergence.PNG)
+</p>
 
 <br/>
+<p>
 <h3>Model Evaluation</h3>
 Out of the 95278 records in the test data supplied from the train-test split, the KNN model correctly predicted 83425 customer outcomes and reached an accuracy level of 0.876.
 The model returned 28 correct positive responses. 
