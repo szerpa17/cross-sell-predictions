@@ -2,168 +2,183 @@
 
 <center>
   <h3>
-    Predicting if health insurance customers will be interested in purchasing an insurer's new car insurance product using Machine Learning.
+    Predicting if health insurance customers will be interested in purchasing an insurer's new car insurance product
+    using Machine Learning.
   </h3>
   <img src="static/images/coins_resized.jpg" alt="" class="center">
 </center>
 
 <div id="projectDetails">
 
-<br/>
-<p>
-</p><h2>Data Source:</h2>
-<hr noshade>
-Kaggle <a href="https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction?select=train.csv">Health Insurance Cross Sell Prediction Data Set</a>.
-</p>
+  <br />
+  <p>
+  </p>
+  <h2>Data Source:</h2>
+  <hr noshade>
+  Kaggle <a href="https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction?select=train.csv">Health
+    Insurance Cross Sell Prediction Data Set</a>.
+  </p>
 
-<!-- <hr> -->
+  <!-- <hr> -->
 
-<p>
-The data used to build our selected Machine Learning model contains 11 customer attributes found below.
-<img src="static/images/variable_definitions.PNG" alt="Variables and their Definitions" class="center">
-</p>
+  <p>
+    The data used to build our selected Machine Learning model contains 11 customer attributes found below.
+    <img src="static/images/variable_definitions.PNG" alt="Variables and their Definitions" class="center">
+  </p>
 
-<br/>
-<p>
-<h2>Tools</h2>
-<hr noshade>
-<h3>Back-end</h3>
-<ul>
-<li>Python</li> 
-<li>Sklearn</li> 
-<li>Joblib</li> 
-<li>Pandas</li>
-<li>Matplotlib</li>
-<li>Seaborn</li>
-<li>Numpy</li>
-<li>Sqlalchemy</li>
-<li>Sqlite3</li>
-<li>Flask</li>
-</ul>
+  <br />
+  <p>
+  <h2>Tools</h2>
+  <hr noshade>
+  <h3>Back-end</h3>
+  <ul>
+    <li>Python</li>
+    <li>Sklearn</li>
+    <li>Joblib</li>
+    <li>Pandas</li>
+    <li>Matplotlib</li>
+    <li>Seaborn</li>
+    <li>Numpy</li>
+    <li>Sqlalchemy</li>
+    <li>Sqlite3</li>
+    <li>Flask</li>
+  </ul>
 
-<br/>
-<h3>Front-end</h3>
-<ul>
-<li>HTML</li>
-<li>Bootstrap</li>
-<li>CSS</li>
-<li>JavaScript</li>
-</ul>
+  <br />
+  <h3>Front-end</h3>
+  <ul>
+    <li>HTML</li>
+    <li>Bootstrap</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
 
-<br/>
-<h3>Deployment</h3>
-<ul>
-<li>Heroku</li>
-</ul>
-</p>
+  <br />
+  <h3>Deployment</h3>
+  <ul>
+    <li>Heroku</li>
+  </ul>
+  </p>
 
-<br/>
-<p>
-<h2>Data Exploration</h2>
-<hr noshade>
-It is a large dataset with over 380,000 records, and only 12% of customers conveying interest in purchasing car insurance. Customer responses and specific attributes were compared.
-To view all visualizations created, please refer to the [Visualization Notebook](eda_viz.ipynb).
-</p>
+  <br />
+  <p>
+  <h2>Data Exploration</h2>
+  <hr noshade>
+  It is a large dataset with over 380,000 records, and only 12% of customers conveying interest in purchasing car
+  insurance. Customer responses and specific attributes were compared.
+  To view all visualizations created, please refer to the [Visualization Notebook](eda_viz.ipynb).
+  </p>
 
-<p>
-<br/>
-static/images/variable_definitions.PNG
-![Customer Response](images/response_bar.png)
-![Response by Gender](images/gender_bar.png)
-![Response by Age](images/age_stackedbar.png)
-![Response by Vehicle Damage](images/vehicle_damage_bar.png)
-![Response by Previously Insured](images/previously_insured_bar.png)
-</p>
+  <p>
+    <br />
+    static/images/variable_definitions.PNG
+    ![Customer Response](images/response_bar.png)
+    ![Response by Gender](images/gender_bar.png)
+    ![Response by Age](images/age_stackedbar.png)
+    ![Response by Vehicle Damage](images/vehicle_damage_bar.png)
+    ![Response by Previously Insured](images/previously_insured_bar.png)
+  </p>
 
-<p>
-Correlation analysis was also conducted, which allowed for the identification of the age and vehicle age relationship.
-![Correlation Matrix](images/corr_matrix.png)
-</p>
+  <p>
+    Correlation analysis was also conducted, which allowed for the identification of the age and vehicle age
+    relationship.
+    ![Correlation Matrix](images/corr_matrix.png)
+  </p>
 
-<br/>
-<p>
-<h2>Model Selection</h2>
-<hr noshade>
-This task was identified as a classification problem due to the presence of multiple customer attribute combinations.
-By using K-Nearest Neighbors (KNN), data points can be classified based on their proximity and association to other available data.
-</p>
+  <br />
+  <p>
+  <h2>Model Selection</h2>
+  <hr noshade>
+  This task was identified as a classification problem due to the presence of multiple customer attribute combinations.
+  By using K-Nearest Neighbors (KNN), data points can be classified based on their proximity and association to other
+  available data.
+  </p>
 
-<br/>
-<p>
-<h2>Building the Model</h2>
-<hr noshade>
-</p>
-<p>
-<h3>Data Preprocessing</h3>
-<hr>
-Categorical data was converted into numeric values in order for the information to be applied to our model.
-The ID column that was initially provided with the dataset was also excluded from our model as it did not add value to the generation of predictions.
+  <br />
+  <p>
+  <h2>Building the Model</h2>
+  <hr noshade>
+  </p>
+  <p>
+  <h3>Data Preprocessing</h3>
+  <hr>
+  Categorical data was converted into numeric values in order for the information to be applied to our model.
+  The ID column that was initially provided with the dataset was also excluded from our model as it did not add value to
+  the generation of predictions.
 
-![Data Preprocessing](images/preprocess.PNG)
-</p>
+  ![Data Preprocessing](images/preprocess.PNG)
+  </p>
 
-<br/>
-<p>
-<h3>Model Training</h3>
-<hr>
-Using Sklearn's train-test split function, training and testing data was extracted from the [customer_data.csv](resources/customer_data.csv) in order to train the KNN model and evaluate its accuracy.
-Before training the model, a series of k-values were populated and plotted in order to identify the point of convergence/stability which allowed the selection of k-value 17 (as this k-value captured some uncertainty prior to the identified point of convergence). 
+  <br />
+  <p>
+  <h3>Model Training</h3>
+  <hr>
+  Using Sklearn's train-test split function, training and testing data was extracted from the
+  [customer_data.csv](resources/customer_data.csv) in order to train the KNN model and evaluate its accuracy.
+  Before training the model, a series of k-values were populated and plotted in order to identify the point of
+  convergence/stability which allowed the selection of k-value 17 (as this k-value captured some uncertainty prior to
+  the identified point of convergence).
 
-![Train Test Split Code](images/train_test_split.PNG)
+  ![Train Test Split Code](images/train_test_split.PNG)
 
-![Convergence Point](images/convergence.PNG)
-</p>
+  ![Convergence Point](images/convergence.PNG)
+  </p>
 
-<br/>
-<p>
-<h3>Model Evaluation</h3>
-<hr>
-Out of the 95278 records in the test data supplied from the train-test split, the KNN model correctly predicted 83425 customer outcomes and reached an accuracy level of 0.876.
-The model returned 28 correct positive responses. 
-</p>
+  <br />
+  <p>
+  <h3>Model Evaluation</h3>
+  <hr>
+  Out of the 95278 records in the test data supplied from the train-test split, the KNN model correctly predicted 83425
+  customer outcomes and reached an accuracy level of 0.876.
+  The model returned 28 correct positive responses.
+  </p>
 
-<br/>
-<p>
-<h2>Model Results</h2>
-<hr noshade>
-When the data was run against the external [testing dataset](resources/test.csv), no customers were identified as interested in purchasing car insurance. This is likely due to the machine only being supplied a small percentage of interested individuals, which reduced its output.
+  <br />
+  <p>
+  <h2>Model Results</h2>
+  <hr noshade>
+  When the data was run against the external [testing dataset](resources/test.csv), no customers were identified as
+  interested in purchasing car insurance. This is likely due to the machine only being supplied a small percentage of
+  interested individuals, which reduced its output.
 
-These outcomes may be found on our published [app](https://cross-sale-predictions.herokuapp.com/).
-</p>
+  These outcomes may be found on our published [app](https://cross-sale-predictions.herokuapp.com/).
+  </p>
 
-<br/>
+  <br />
 
-<p>
-<h2>Flask App Routes</h2>
-<hr noshade>
-<ul>
-<li>"/" - Home Page</li>
-<li>"/api/v1.0/testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.</li> 
-<li>"/api/v1.0/original_testing_data" - Returns all testing data in a user readable format.</li>
-<li>"/api/v1.0/< customer_id >" - Returns user readable test data for a specific customer ID.</li>
-<li>"/api/v1.0/prediction/< customer_id >" - Returns a purchase prediction for a specific customer ID.</li>
-<li>"/api/v1.0/user_prediction/< multi value entry >" - Returns a prediction for inputted customer data.</li>
-</ul>
+  <p>
+  <h2>Flask App Routes</h2>
+  <hr noshade>
+  <ul>
+    <li>"/" - Home Page</li>
+    <li>"/api/v1.0/testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.</li>
+    <li>"/api/v1.0/original_testing_data" - Returns all testing data in a user readable format.</li>
+    <li>"/api/v1.0/< customer_id>" - Returns user readable test data for a specific customer ID.</li>
+    <li>"/api/v1.0/prediction/< customer_id>" - Returns a purchase prediction for a specific customer ID.</li>
+    <li>"/api/v1.0/user_prediction/< multi value entry>" - Returns a prediction for inputted customer data.</li>
+  </ul>
 
-</p>
+  </p>
 
-<br/>
-<p>
-<h2>Flask App Infrastructure</h2>
-<hr noshade>
-![Flask App Infrastructure](images/infrastructure.PNG)
-</p>
+  <br />
+  <p>
+  <h2>Flask App Infrastructure</h2>
+  <hr noshade>
+  ![Flask App Infrastructure](images/infrastructure.PNG)
+  </p>
 
-<br/>
-<p>
-<h2>Next Steps</h2>
-<hr noshade>
- Apply oversampling onto the dataset to increase the number of interested customers in order to address the issue of few positive responses in original dataset.
- Experiment with model results to achieve a 90-95% accuracy level. 
- Experiment with using less customer attributes to identify interested and non-interested customers.
- Apply a different method to load large datasets into web apps.
- Make available a form entry method for users to select and submit different attributes to predict cross sale potential. 
-</p>
+  <br />
+  <p>
+  <h2>Next Steps</h2>
+  <hr noshade>
+  Apply oversampling onto the dataset to increase the number of interested customers in order to address the issue of
+  few positive responses in original dataset.
+  Experiment with model results to achieve a 90-95% accuracy level.
+  Experiment with using less customer attributes to identify interested and non-interested customers.
+  Apply a different method to load large datasets into web apps.
+  Make available a form entry method for users to select and submit different attributes to predict cross sale
+  potential.
+  </p>
 
 </div>
 
