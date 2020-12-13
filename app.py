@@ -7,18 +7,10 @@ import joblib
 from sklearn.neighbors import KNeighborsClassifier
 from config import cxnstring
 
-# #################################################
-# # Database Setup
-# #################################################
-# insurance_info = os.path.join('Database', 'insurance_data.sqlite')
-
-
 #################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','') or 'sqlite:///db.insurance_data'
 
 #################################################
 # Flask Routes
