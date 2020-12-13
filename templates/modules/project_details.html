@@ -103,22 +103,23 @@
   The ID column that was initially provided with the dataset was also excluded from our model as it did not add value to
   the generation of predictions.
 
-  ![Data Preprocessing](images/preprocess.PNG)
+  <img src="static/images/preprocess.PNG" alt="Data Preprocessing">
   </p>
 
   <br />
   <p>
   <h3>Model Training</h3>
   <hr>
-  Using Sklearn's train-test split function, training and testing data was extracted from the
-  [customer_data.csv](resources/customer_data.csv) in order to train the KNN model and evaluate its accuracy.
+  Using Sklearn's train-test split function, training and testing data was extracted from the 
+  <a href="https://github.com/szerpa17/cross-sell-predictions/blob/main/Resources/customer_data.csv">customer_data.csv</a> 
+  in order to train the KNN model and evaluate its accuracy.
   Before training the model, a series of k-values were populated and plotted in order to identify the point of
   convergence/stability which allowed the selection of k-value 17 (as this k-value captured some uncertainty prior to
   the identified point of convergence).
 
-  ![Train Test Split Code](images/train_test_split.PNG)
+  <img src="static/images/train_test_split.PNG" alt="Train Test Split Code">
 
-  ![Convergence Point](images/convergence.PNG)
+  <img src="static/images/convergence.PNG" alt="Convergence Point">
   </p>
 
   <br />
@@ -137,12 +138,9 @@
   When the data was run against the external [testing dataset](resources/test.csv), no customers were identified as
   interested in purchasing car insurance. This is likely due to the machine only being supplied a small percentage of
   interested individuals, which reduced its output.
-
-  These outcomes may be found on our published [app](https://cross-sale-predictions.herokuapp.com/).
   </p>
 
   <br />
-
   <p>
   <h2>Flask App Routes</h2>
   <hr noshade>
@@ -161,7 +159,7 @@
   <p>
   <h2>Flask App Infrastructure</h2>
   <hr noshade>
-  ![Flask App Infrastructure](images/infrastructure.PNG)
+  <img src="static/images/infrastructure.PNG" alt="Flask App Infrastructure">
   </p>
 
   <br />
