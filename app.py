@@ -27,7 +27,7 @@ def home_page():
 
     return render_template("layout.html")
 
-# Route returns all cleaned model data
+# Route returns all cleaned customer model data
 @app.route("/api/v1.0/model_customer_data")
 def model_customer_data():
     # conn = sqlite3.connect(app)
@@ -35,6 +35,36 @@ def model_customer_data():
 
     # Create our session (link) from Python to the DB
     test_data = conn.execute("SELECT * FROM model_customer_data;")
+
+    """Return a list"""
+    test_data_array = []
+
+    for row in test_data:
+        test_data_array.append({'id': row[0],
+                                'gender': row[1],
+                                'age': row[2],
+                                'driving license': row[3],
+                                'region code': row[4],
+                                'previously insured': row[5],
+                                'vehicle age': row[6],
+                                'vehicle damage': row[7],
+                                'annual premium': row[8],
+                                'policy sales_channel': row[9],
+                                'vintage': row[10],
+                                'result': row[11]})
+
+    conn.close
+
+    return jsonify(test_data_array)
+
+# Route returns all original customer data
+@app.route("/api/v1.0/original_customer_data")
+def original_customer_data():
+    # conn = sqlite3.connect(app)
+    conn = sqlite3.connect(cxnstring)
+
+    # Create our session (link) from Python to the DB
+    test_data = conn.execute("SELECT * FROM original_customer_data;")
 
     """Return a list"""
     test_data_array = []
