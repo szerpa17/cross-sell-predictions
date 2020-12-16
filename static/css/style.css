@@ -7,21 +7,22 @@ body, html {
 /* Hero Image and Text Style */
 /* The hero image */
 .hero-image {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    /*  Placed Image */
     background-image: url("../images/coins_resized.jpg");
+    /* Added gray scale for text readability */
     filter: grayscale(0.4);
 
     /* Set a specific height */
     height: 50%;
   
-    /* Position and center the image to scale nicely on all screens */
+    /* Position and center the image to scale on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
   }
   
-  /* Place text in the middle of the image */
+  /* Place text in image */
   .hero-text h3{
     text-align: center;
     position: fixed;
@@ -33,7 +34,7 @@ body, html {
     background-color :rgba(0, 0, 0, .5);
   }
 
-/* Overall Page Style */
+/* Text Styles*/
 h1 {
     letter-spacing: 2px;
     background-color:silver;
