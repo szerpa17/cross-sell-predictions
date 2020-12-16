@@ -1,3 +1,6 @@
+/* Hero Image and Text Style */
+
+/* Overall Page Style */
 h1 {
     letter-spacing: 2px;
     background-color:silver;
@@ -15,6 +18,7 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Image Style */
 .centerImg {
     display: block;
     margin-left: auto;
