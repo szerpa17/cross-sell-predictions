@@ -23,7 +23,9 @@
     {% endblock navbar %}
 
     <!-- Header -->
-    <h1>Predicting Cross-Sale Opportunities</h1>
+    {% block h_header %}
+    {% include "modules/h_header.html" %}
+    {% endblock h_header %}
 
     <div class="container">
 
