@@ -19,12 +19,6 @@ app = Flask(__name__)
 @app.route("/")
 def home_page():
     # """List all available api routes."""
-    # return (
-    #     f"Available Routes:<br/>"
-    #     f"/api/v1.0/testing_data<br/>"
-    #     f"/api/v1.0/original_testing_data"
-    # )
-
     return render_template("layout.html")
 
 # Route returns all cleaned customer model data
@@ -144,38 +138,6 @@ def original_test_data():
     conn.close
 
     return jsonify(test_data_array)
-
-# Route returns test data for a specific customer ID
-@app.route("/api/v1.0/<customer_id>")
-def user_specific_data(customer_id):
-    # Transform input to int
-    c_id = int(customer_id)
-
-    conn = sqlite3.connect(cxnstring)
-
-    # Create our session (link) from Python to the DB
-    test_data = conn.execute(
-        f"SELECT * FROM original_test_data WHERE id = {c_id};")
-
-    """Return a list"""
-    customer_data = []
-
-    for row in test_data:
-        customer_data.append({'id': row[0],
-                              'gender': row[1],
-                              'age': row[2],
-                              'driving license': row[3],
-                              'region code': row[4],
-                              'previously insured': row[5],
-                              'vehicle age': row[6],
-                              'vehicle damage': row[7],
-                              'annual premium': row[8],
-                              'policy sales channel': row[9],
-                              'vintage': row[10]})
-
-    conn.close
-
-    return jsonify(customer_data)
 
 # Route returns prediction for a specific customer ID
 @app.route("/api/v1.0/prediction/<customer_id>")
