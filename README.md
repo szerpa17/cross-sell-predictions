@@ -87,9 +87,10 @@ These outcomes may be found on our published [app](https://cross-sale-prediction
 
 ## Flask App Routes
 * "/" - Home Page
-* "/api/v1.0/testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.
+* "/api/v1.0/model_customer_data" - Returns all cleaned customer data used to build the KNN model.
+* "/api/v1.0/original_customer_data" - Returns all original customer data.
+* "/api/v1.0/model_testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.
 * "/api/v1.0/original_testing_data" - Returns all testing data in a user readable format.
-* "/api/v1.0/< customer_id >" - Returns user readable test data for a specific customer ID.
 * "/api/v1.0/prediction/< customer_id >" - Returns a purchase prediction for a specific customer ID.
 * "/api/v1.0/user_prediction/< multi value entry >" - Returns a prediction for inputted customer data.
 
