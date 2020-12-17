@@ -188,8 +188,7 @@ def customer_prediction(customer_id):
                 'prediction': result}
 
     except ValueError:
-        return {'ID Value Error': 'ID not found in test data',
-                'Next Steps': 'Please enter an ID value that ranges from 381110 to 508146'}
+        return {'ID Value Error': 'ID not found in test data'}
 
 # Route returns prediction for user inputted values
 @app.route("/api/v1.0/user_prediction/<val_1>-<val_2>-<val_3>-<val_4>-<val_5>-<val_6>-<val_7>-<val_8>-<val_9>-<val_10>")
