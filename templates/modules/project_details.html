@@ -147,8 +147,8 @@
   <p>
   <ul>
     <li>"/" - Home Page</li>
-    <li>"/api/v1.0/model_customer_data" - Route returns all cleaned customer data used to build the KNN model.</li>
-    <li>"/api/v1.0/original_customer_data" - Route returns all original customer data.</li>
+    <li>"/api/v1.0/model_customer_data" - Returns all cleaned customer data used to build the KNN model.</li>
+    <li>"/api/v1.0/original_customer_data" - Returns all original customer data.</li>
     <li>"/api/v1.0/model_testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.</li>
     <li>"/api/v1.0/original_testing_data" - Returns all testing data in a user readable format.</li>
     <li>"/api/v1.0/prediction/&#60;customer_id>" - Returns a purchase prediction for a specific customer ID.</li>
@@ -167,13 +167,15 @@
   <p>
   <h2>Next Steps</h2>
   <hr noshade>
-  Apply oversampling onto the dataset to increase the number of interested customers in order to address the issue of
-  few positive responses in original dataset.
-  Experiment with model results to achieve a 90-95% accuracy level.
-  Experiment with using less customer attributes to identify interested and non-interested customers.
-  Apply a different method to load large datasets into web apps.
-  Make available a form entry method for users to select and submit different attributes to predict cross sale
-  potential.
+  <ul>
+    <li>Apply oversampling onto the dataset to increase the number of interested customers in order to address the issue
+      of few positive responses in original dataset.</li>
+    <li>Experiment with model results to achieve a 90-95% accuracy level.</li>
+    <li>Experiment with using less customer attributes to identify interested and non-interested customers.</li>
+    <li>Apply a different method to load large datasets into web apps.</li>
+    <li>Make available a form entry method for users to select and submit different attributes to predict cross sale
+      potential.</li>
+  </ul>
   </p>
 
 </div>
