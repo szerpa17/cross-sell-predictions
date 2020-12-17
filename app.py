@@ -89,7 +89,7 @@ def original_customer_data():
 
 
 # Route returns all cleaned test data
-@app.route("/api/v1.0/testing_data")
+@app.route("/api/v1.0/model_testing_data")
 def testing_data():
     # conn = sqlite3.connect(app)
     conn = sqlite3.connect(cxnstring)
@@ -188,7 +188,7 @@ def customer_prediction(customer_id):
 
         # Create our session (link) from Python to the DB
         test_data = conn.execute(
-            f"SELECT * FROM original_test_data WHERE id = {c_id};")
+            f"SELECT * FROM model_customer_data WHERE id = {c_id};")
 
         """Return a list"""
         customer_test_data = []
