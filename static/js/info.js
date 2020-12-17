@@ -23,12 +23,8 @@ function capitalizeEachWord(str) {
 
 function populateInfo(selectedID) {
     d3.json("/api/v1.0/original_customer_data").then((data) => {
-        console.log(typeof (data));
-        console.log(data);
-        var selectedID = 1;
         let singleCustomer = data.filter(customer => customer.id == selectedID);
-        console.log(singleCustomer);
-
+        
         // Populate demographic info box
         let box = d3.select("#customer_details");
         // Clear box content
@@ -37,7 +33,6 @@ function populateInfo(selectedID) {
         for (const [key, value] of Object.entries(singleCustomer[0])) {
             box.append("p")
                 .text(`${capitalizeEachWord(key)}: ${value}`);
-            console.log(`${capitalizeEachWord(key)}: ${value}`);
         };
     });
 }
