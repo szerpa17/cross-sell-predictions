@@ -34,13 +34,13 @@ def model_customer_data():
     conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
-    test_data = conn.execute("SELECT * FROM model_customer_data;")
+    model_customer_data = conn.execute("SELECT * FROM model_customer_data;")
 
     """Return a list"""
-    test_data_array = []
+    model_customer_array = []
 
-    for row in test_data:
-        test_data_array.append({'id': row[0],
+    for row in model_customer_data:
+        model_customer_array.append({'id': row[0],
                                 'gender': row[1],
                                 'age': row[2],
                                 'driving license': row[3],
@@ -49,13 +49,13 @@ def model_customer_data():
                                 'vehicle age': row[6],
                                 'vehicle damage': row[7],
                                 'annual premium': row[8],
-                                'policy sales_channel': row[9],
+                                'policy sales channel': row[9],
                                 'vintage': row[10],
                                 'result': row[11]})
 
     conn.close
 
-    return jsonify(test_data_array)
+    return jsonify(model_customer_array)
 
 # Route returns all original customer data
 @app.route("/api/v1.0/original_customer_data")
@@ -64,13 +64,13 @@ def original_customer_data():
     conn = sqlite3.connect(cxnstring)
 
     # Create our session (link) from Python to the DB
-    test_data = conn.execute("SELECT * FROM original_customer_data;")
+    original_customer_data = conn.execute("SELECT * FROM original_customer_data;")
 
     """Return a list"""
-    test_data_array = []
+    original_customer_array = []
 
-    for row in test_data:
-        test_data_array.append({'id': row[0],
+    for row in original_customer_data:
+        original_customer_array.append({'id': row[0],
                                 'gender': row[1],
                                 'age': row[2],
                                 'driving license': row[3],
@@ -79,13 +79,13 @@ def original_customer_data():
                                 'vehicle age': row[6],
                                 'vehicle damage': row[7],
                                 'annual premium': row[8],
-                                'policy sales_channel': row[9],
+                                'policy sales channel': row[9],
                                 'vintage': row[10],
                                 'result': row[11]})
 
     conn.close
 
-    return jsonify(test_data_array)
+    return jsonify(original_customer_array)
 
 
 # Route returns all cleaned test data
@@ -110,7 +110,7 @@ def testing_data():
                                 'vehicle age': row[6],
                                 'vehicle damage': row[7],
                                 'annual premium': row[8],
-                                'policy sales_channel': row[9],
+                                'policy sales channel': row[9],
                                 'vintage': row[10]})
 
     conn.close
@@ -138,7 +138,7 @@ def original_test_data():
                                 'vehicle age': row[6],
                                 'vehicle damage': row[7],
                                 'annual premium': row[8],
-                                'policy sales_channel': row[9],
+                                'policy sales channel': row[9],
                                 'vintage': row[10]})
 
     conn.close
