@@ -62,7 +62,8 @@
   <hr noshade>
   It is a large dataset with over 380,000 records, and only 12% of customers conveying interest in purchasing car
   insurance. Customer responses and specific attributes were compared.
-  To view all visualizations created, please refer to the <a href="https://github.com/szerpa17/cross-sell-predictions/blob/main/eda_viz.ipynb">Visualization Notebook</a>.
+  To view all visualizations created, please refer to the <a
+    href="https://github.com/szerpa17/cross-sell-predictions/blob/main/eda_viz.ipynb">Visualization Notebook</a>.
   </p>
 
   <p>
@@ -108,8 +109,9 @@
   <p>
   <h3>Model Training</h3>
   <hr>
-  Using Sklearn's train-test split function, training and testing data was extracted from the 
-  <a href="https://github.com/szerpa17/cross-sell-predictions/blob/main/Resources/customer_data.csv">customer_data.csv</a> 
+  Using Sklearn's train-test split function, training and testing data was extracted from the
+  <a
+    href="https://github.com/szerpa17/cross-sell-predictions/blob/main/Resources/customer_data.csv">customer_data.csv</a>
   in order to train the KNN model and evaluate its accuracy.
   Before training the model, a series of k-values were populated and plotted in order to identify the point of
   convergence/stability which allowed the selection of k-value 17 (as this k-value captured some uncertainty prior to
@@ -131,24 +133,27 @@
   <p>
   <h2>Model Results</h2>
   <hr noshade>
-  When the data was run against the external  <a href="https://github.com/szerpa17/cross-sell-predictions/blob/main/Resources/test.csv">testing dataset</a>, no customers were identified as
+  When the data was run against the external <a
+    href="https://github.com/szerpa17/cross-sell-predictions/blob/main/Resources/test.csv">testing dataset</a>, no
+  customers were identified as
   interested in purchasing car insurance. This is likely due to the machine only being supplied a small percentage of
   interested individuals, which reduced its output.
   </p>
 
   <br />
-  <p>
+
   <h2>Flask App Routes</h2>
   <hr noshade>
-    <ul>
-        <li>"/" - Home Page</li>
-        <li>"/api/v1.0/model_customer_data" - Route returns all cleaned customer data used to build the KNN model.</li>
-        <li>"/api/v1.0/original_customer_data" - Route returns all original customer data.</li>
-        <li>"/api/v1.0/model_testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.</li>
-        <li>"/api/v1.0/original_testing_data" - Returns all testing data in a user readable format.</li>
-        <li>"/api/v1.0/prediction/&#60;customer_id>" - Returns a purchase prediction for a specific customer ID.</li>
-        <li>"/api/v1.0/user_prediction/&#60;multi value entry>" - Returns a prediction for inputted customer data.</li>
-      </ul>
+  <p>
+  <ul>
+    <li>"/" - Home Page</li>
+    <li>"/api/v1.0/model_customer_data" - Route returns all cleaned customer data used to build the KNN model.</li>
+    <li>"/api/v1.0/original_customer_data" - Route returns all original customer data.</li>
+    <li>"/api/v1.0/model_testing_data" - Returns all testing data that has been formatted to be applied on the KNN model.</li>
+    <li>"/api/v1.0/original_testing_data" - Returns all testing data in a user readable format.</li>
+    <li>"/api/v1.0/prediction/&#60;customer_id>" - Returns a purchase prediction for a specific customer ID.</li>
+    <li>"/api/v1.0/user_prediction/&#60;multi value entry>" - Returns a prediction for inputted customer data.</li>
+  </ul>
   </p>
 
   <br />
