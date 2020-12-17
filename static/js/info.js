@@ -24,7 +24,7 @@ function capitalizeEachWord(str) {
 function populateInfo(selectedID) {
     d3.json("/api/v1.0/original_customer_data").then((data) => {
         let singleCustomer = data.filter(customer => customer.id == selectedID);
-        
+        console.log(selectedID);
         // Populate demographic info box
         let box = d3.select("#customer_details");
         // Clear box content
@@ -36,3 +36,4 @@ function populateInfo(selectedID) {
         };
     });
 }
+

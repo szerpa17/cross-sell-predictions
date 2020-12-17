@@ -1,7 +1,7 @@
 // Initialize the page with a default plot
 function init() {
     
-    d3.json("/api/v1.0/testing_data").then((data) => {
+    d3.json("/api/v1.0/original_customer_data").then((data) => {
 
         // Iterate through data
         var idList = data.map(function(customer) {
@@ -9,8 +9,16 @@ function init() {
             return customer.id;
         })
         
-        // Slice out 50 ID values for site efficiency
-        idList20Vals = idList.slice(0,50);
+        // Loop to populate range
+        // Slice out 20 ID values
+        var start = 6011;
+        var end = 6031;
+
+        var idList20Vals = [];
+
+        while(start < end+1){
+            idList20Vals.push(start++);
+        }
 
         // Use D3 to select the location of the drops down values
         let dropdownMenu = d3.select("#customer_ID");
@@ -32,7 +40,6 @@ function init() {
 function optionChanged() {
     
     let selectedID = d3.select("#customer_ID").node().value;
-    console.log(selectedID);
     
     populateInfo(selectedID);
     predict(selectedID);
