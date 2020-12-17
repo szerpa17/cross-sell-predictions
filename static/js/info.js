@@ -5,7 +5,7 @@ function capitalizeEachWord(str) {
     if (/\s/.test(str)) {
         // Return each word in the string
         return str.replace(/\w\S*/g, function (txt) {
-            // If The word is more than 3 characters long, capitalize the first letter
+            // If The word is more than 3 characters long (or the word "age"), capitalize the first letter
             if (txt.length > 3 | txt == "age") {
                 return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
             }
